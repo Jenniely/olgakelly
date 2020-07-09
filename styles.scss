@@ -116,6 +116,10 @@ body {
     left: 1010px;
 }
 
+.nav-toggle {
+    display: none;
+}
+
 ul.menu {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -251,6 +255,59 @@ ul.menu {
         width: 100%;
     }
 
+    $nav-toggle-bar-height: 0.2rem;
+    $nav-toggle-bar-width: 1.8rem;
+    $nav-toggle-z-index: 2;
+
+    @mixin transform($transform) {
+        -ms-transform: $transform;
+        -webkit-transform: $transform;
+        transform: $transform;
+    }
+
+    @mixin center-vertically($position: absolute) {
+        position: $position;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+	    height: 5 * $nav-toggle-bar-height;
+	    left: 2rem;
+	    position: fixed; 
+	    top: 2rem;    
+	    width: $nav-toggle-bar-width;
+	    z-index: $nav-toggle-z-index;
+	    &:hover { opacity: 0.8; }
+
+	.nav-toggle-bar,
+	.nav-toggle-bar::after,
+	.nav-toggle-bar::before {
+        @include center-vertically;
+		background: white;
+		content: '';
+        height: $nav-toggle-bar-height;
+        display: block;
+		transition: all .5s;
+        width: 100%;
+	}
+	.nav-toggle-bar { margin-top: 0; }
+	.nav-toggle-bar::after { margin-top: 2 * $nav-toggle-bar-height; }
+    .nav-toggle-bar::before { margin-top: -2 * $nav-toggle-bar-height; }
+    &.expanded .nav-toggle-bar { background: transparent; }
+	&.expanded .nav-toggle-bar::after,
+	&.expanded .nav-toggle-bar::before {
+		background: white;
+		margin-top: 0;
+	}
+	&.expanded .nav-toggle-bar::after { @include transform(rotate(45deg)); }
+	&.expanded .nav-toggle-bar::before { @include transform(rotate(-45deg)); }
+    }
+
     .header {
         background-size: cover;
         position: relative;
@@ -292,10 +349,19 @@ ul.menu {
         background-color: rgba(3, 2, 2, 0.65);
         top: 0;
         left: 0;
+        cursor: pointer;
+	    display: flex;
+	    left: 0;
+	    position: fixed;
+	    top: -200px;
+	    transition: top .5s;
+	    z-index: 1;
+        &.expanded { top: 0; }
     }
     
     ul.menu {
         padding: 0;
+        width: 100%;
     }
     
     .menu-item {
