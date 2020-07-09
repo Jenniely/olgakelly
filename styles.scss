@@ -1,4 +1,5 @@
-/* Box sizing rules */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Oswald:wght@300;400;600&display=swap');
+
 *,
 *::before,
 *::after {
@@ -75,4 +76,278 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.6)
+
+      ), url("./assets/dane-deaner_darkened.png");
+      background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%);            ;
+        clip-path: polygon(0% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+        height: 95vh;
+    }
+}
+
+.header-nav {
+    width: 140px;
+    position: absolute;
+    background-color: rgba(3, 2, 2, 0.65);
+    top: 0;
+    left: 1010px;
+}
+
+ul.menu {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.menu-item {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    line-height: 2.5em;
+    text-align: center;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: white;
+    
+    &:hover {
+        color: #F65D5D;
+    }
+}
+
+.promo {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    color: white;
+    text-align: right;
+
+    & .name {
+        font-family: 'Oswald', sans-serif;
+        font-size: 4em;
+    }
+
+    & .title {
+        font-size: 2em;
+    }
+}
+
+.chapter-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5em;
+}
+
+.chapter-text {
+    font-size: 1.2em;
+    padding-top: 15px;
+}
+
+.highlight {
+    color:  #F65D5D;
+    font-weight: 600;
+}
+
+.roles {
+    margin-top: 50px;
+}
+
+.roles-item {
+    width: 95%;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: right;
+
+    &.odd {
+        background-color: rgba(3, 2, 2, 0.45);
+        text-align: left;
+        & .highlight {
+            color: black;
+        }
+    }
+}
+
+.contact-text {
+    margin: 50px 0;
+}
+
+.contact-form {
+    margin: 0 auto;
+    width: 600px; 
+}
+
+.feedback-input {
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25em;
+    line-height: 2.5em;
+    background-color: rgba(3, 2, 2, 0.45);
+    border: none;
+    transition: all 0.3s;
+    margin-bottom: 15px;
+    width:100%;
+    box-sizing: border-box;
+    outline:0;
+  }
+  
+  .feedback-input:focus { border:2px solid white; }
+  
+  textarea {
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+  }
+  
+  [type="submit"] {
+    font-family: 'Oswald', sans-serif;
+    width: 100%;
+    background:#F65D5D;
+    border:0;
+    cursor:pointer;
+    color:white;
+    font-size:24px;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition: all 0.3s;
+    margin-top:-4px;
+  }
+  [type="submit"]:hover { background:#CC4949; }
+
+  .copyright {
+      margin-top: 50px;
+      text-align: center;
+  }
+
+@media only screen and (max-width: 375px) {
+
+    body {
+        font-size: 14px;
+
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
+    .header {
+        background-size: cover;
+        position: relative;
+        background: linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.6)
+
+      ), url("./assets/dane-deaner_darkened_small.png");
+      background-blend-mode: darken;
+
+      @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);           ;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+        height: 650px;
+        background-position: 35% top;
+        background-size: 155%;
+    }
+
+    .promo {
+        position: absolute;
+        top: 65%;
+        left: 3%;
+        color: white;
+        text-align: right;
+    
+        & .name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3em;
+        }
+    
+        & .title {
+            font-size: 1.3em;
+        }
+    }
+
+    .header-nav {
+        width: 375px;
+        position: absolute;
+        background-color: rgba(3, 2, 2, 0.65);
+        top: 0;
+        left: 0;
+    }
+    
+    ul.menu {
+        padding: 0;
+    }
+    
+    .menu-item {
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.3em;
+        line-height: 1.5em;
+        text-align: center;
+        font-weight: lighter;
+    }
+    
+    .menu-item a {
+        text-decoration: none;
+        color: white;
+        
+        &:hover {
+            color: #F65D5D;
+        }
+    }
+
+    }
+
+    .chapter-header {
+        font-size: 2em;
+        padding: 0 5px;
+    }
+    
+    .chapter-text {
+        font-size: 1em;
+        padding: 0 5px;
+        padding-top: 15px;
+    }
+
+    .contact-text {
+        padding: 0 5px;
+    }
+    
+    .contact-form {
+        padding: 0 5px;
+        width: 100%; 
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 990px) {
+    
+}
+
+@media only screen and (min-width: 1200px) {
+   
 }
