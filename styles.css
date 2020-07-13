@@ -91,7 +91,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("./assets/dane-deaner_darkened.png");
   background-blend-mode: darken;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left;
   background-size: cover;
   position: relative;
 }
@@ -108,7 +108,8 @@ body {
   position: absolute;
   background-color: rgba(3, 2, 2, 0.65);
   top: 0;
-  left: 1010px;
+  left: 95%;
+  transform: translateX(-140px);
 }
 
 .nav-toggle {
@@ -240,6 +241,16 @@ textarea {
   text-align: center;
 }
 
+input[aria-invalid=true], textarea[aria-invalid=true] {
+  border: 1px solid #f00;
+  box-shadow: 0 0 4px 0 #f00;
+}
+
+textarea[aria-invalid=true], textarea[aria-invalid=true] {
+  border: 1px solid #f00;
+  box-shadow: 0 0 4px 0 #f00;
+}
+
 @media only screen and (max-width: 375px) {
   body {
     font-size: 14px;
@@ -247,61 +258,6 @@ textarea {
 
   .wrapper {
     width: 100%;
-  }
-
-  .nav-toggle {
-    display: block;
-    cursor: pointer;
-    height: 1rem;
-    left: 2rem;
-    position: fixed;
-    top: 2rem;
-    width: 1.8rem;
-    z-index: 2;
-  }
-  .nav-toggle:hover {
-    opacity: 0.8;
-  }
-  .nav-toggle .nav-toggle-bar,
-.nav-toggle .nav-toggle-bar::after,
-.nav-toggle .nav-toggle-bar::before {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    background: white;
-    content: "";
-    height: 0.2rem;
-    display: block;
-    transition: all 0.5s;
-    width: 100%;
-  }
-  .nav-toggle .nav-toggle-bar {
-    margin-top: 0;
-  }
-  .nav-toggle .nav-toggle-bar::after {
-    margin-top: 0.4rem;
-  }
-  .nav-toggle .nav-toggle-bar::before {
-    margin-top: -0.4rem;
-  }
-  .nav-toggle.expanded .nav-toggle-bar {
-    background: transparent;
-  }
-  .nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
-    background: white;
-    margin-top: 0;
-  }
-  .nav-toggle.expanded .nav-toggle-bar::after {
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-  .nav-toggle.expanded .nav-toggle-bar::before {
-    -ms-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
   }
 
   .header {
@@ -387,6 +343,11 @@ textarea {
 
   .contact-form {
     padding: 0 5px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .wrapper {
     width: 100%;
   }
 }

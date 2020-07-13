@@ -61,10 +61,12 @@
         <div class="contact" id="contact">
             <h2 class="chapter-header">Contact</h2>
             <p class="contact-text chapter-text">Let’s get in touch! Please use the contact form below or write me a letter to <a href="mailto:olga@olgakelly.com" target="_blank" rel="noopener noreferrer">olga@olgakelly.com</a>.</p>
-            <form class="contact-form">
-                <input name="name" type="text" class="feedback-input" placeholder="Name" />   
-                <input name="email" type="text" class="feedback-input" placeholder="Email" />
-                <textarea name="text" class="feedback-input" placeholder="Your message"></textarea>
+            <form class="contact-form" method="post" action="#"> 
+                <input name="name" required='required'  aria-required="true" type="text" class="feedback-input" placeholder="Name *" /> 
+                <p class="error-message"></p>  
+                <input name="email" required='required' pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'  aria-required="true" type="email" class="feedback-input" placeholder="Email *" />
+                <p class="error-message"></p>  
+                <textarea name="text"  required='required'  aria-required="true" class="feedback-input" placeholder="Your message *"></textarea>
                 <input type="submit" value="SUBMIT"/>
             </form>
         </div>
@@ -72,6 +74,7 @@
             <p class="copyright">Copyright©2020 <a href="#">olgakelly.com</a></p>
         </footer>
     </div>
-    <script src="menu-toggle.js"></script>
+    <script src="./scripts/menu-toggle.js"></script>
+    <script src="./scripts/form-validator.js"></script>
 </body>
 </html>
