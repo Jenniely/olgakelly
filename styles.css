@@ -108,7 +108,7 @@ body {
   position: absolute;
   background-color: rgba(3, 2, 2, 0.65);
   top: 0;
-  left: 95%;
+  left: 99%;
   transform: translateX(-140px);
 }
 
@@ -140,7 +140,7 @@ ul.menu {
 .promo {
   position: absolute;
   top: 60%;
-  left: 45%;
+  left: 50%;
   color: white;
   text-align: right;
 }
@@ -175,14 +175,22 @@ ul.menu {
   width: 95%;
   margin: 15px auto;
   padding: 10px;
+  padding-left: 12%;
+  text-align: left;
+}
+.roles-item .roles-header {
   text-align: right;
 }
 .roles-item.odd {
   background-color: rgba(3, 2, 2, 0.45);
   text-align: left;
+  padding-left: 10px;
 }
 .roles-item.odd .highlight {
   color: black;
+}
+.roles-item.odd .roles-header {
+  text-align: left;
 }
 
 .contact-text {
@@ -206,6 +214,11 @@ ul.menu {
   width: 100%;
   box-sizing: border-box;
   outline: 0;
+}
+.feedback-input::placeholder {
+  color: white;
+  opacity: 0.8;
+  font-weight: lighter;
 }
 
 .feedback-input:focus {
@@ -242,13 +255,8 @@ textarea {
 }
 
 input[aria-invalid=true], textarea[aria-invalid=true] {
-  border: 1px solid #f00;
-  box-shadow: 0 0 4px 0 #f00;
-}
-
-textarea[aria-invalid=true], textarea[aria-invalid=true] {
-  border: 1px solid #f00;
-  box-shadow: 0 0 4px 0 #f00;
+  border: 1px solid #F65D5D;
+  box-shadow: 0 0 4px 0 #F65D5D;
 }
 
 @media only screen and (max-width: 375px) {
