@@ -1,1 +1,1 @@
-# olgakelly
+This is a personal website for a professional. Designed from scratch in Figma and implemented with HTML, SASS and JavaScript. Utilizes Formspree for form processing.
